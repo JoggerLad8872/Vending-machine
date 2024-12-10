@@ -37,24 +37,17 @@ int main() {
 		cout << item[i].ID << " " << item[i].Name << " " << item[i].Price << endl;
 	}
 
+	//Lets the user input the ID of the item they want to select
 	cout << "\nPlease enter an Item ID: " << ends;
 	cin >> InputID;
 
-
+	//goes through each object and check if the inputted ID matches any of the objects
 	for (int i = 0; i < itemNum; i++) {
 		if (InputID == item[i].ID) {
 			cout << item[i].Name << endl;
 			break;
 		}
 	}
-
-
-
-
-
-
-
-
 
 	return 0;
 }
