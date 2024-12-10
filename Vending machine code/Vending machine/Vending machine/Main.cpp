@@ -6,7 +6,7 @@ class FoodITM {
 public:
 	int ID;
 	string Name;
-	float price;
+	float Price;
 	//default constructor: A constructor is needed whenever an object is declared, if no constructor exists the program will not work properly
 	//the default constructor acts as an empty constcructor 
 	FoodITM() {};
@@ -14,7 +14,7 @@ public:
 	FoodITM(int a, string b, float c) {
 		ID = a;
 		Name = b;
-		price = c;
+		Price = c;
 	}
 };
 
@@ -30,7 +30,9 @@ int main() {
 	item[3] = FoodITM(4, "Cherry Pepsi", 1.95);
 	item[4] = FoodITM(5, "Spicy Doritos", 1.95);
 	item[5] = FoodITM(6, "Egg", 2.99);
-	cout << item[0].ID << endl;
+	for (int i = 0; i < itemNum; i++) {
+		cout << item[i].ID << " " << item[i].Name << " " << item[i].Price << endl;
+	}
 
 
 
