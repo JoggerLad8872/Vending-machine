@@ -19,14 +19,17 @@ public:
 };
 
 int main() {
-	FoodITM Drink1(1, "Coke", 3.99);
-	cout << Drink1.ID << " " << Drink1.Name << " " << Drink1.price << endl;
-
-
-
-	const int itemNum = 1;
+	//the lenghth of the array in which the objects are stored
+	const int itemNum = 6;
+	//declares the array
 	FoodITM item[itemNum];
-	item[0] = FoodITM(1, "egg", 2.99);
+	//declares each individual object in the array
+	item[0] = FoodITM(1, "Water", 1.00);
+	item[1] = FoodITM(2, "Pepsi", 1.70);
+	item[2] = FoodITM(3, "Pepsi Max", 1.70);
+	item[3] = FoodITM(4, "Cherry Pepsi", 1.95);
+	item[4] = FoodITM(5, "Spicy Doritos", 1.95);
+	item[5] = FoodITM(6, "Egg", 2.99);
 	cout << item[0].ID << endl;
 
 
