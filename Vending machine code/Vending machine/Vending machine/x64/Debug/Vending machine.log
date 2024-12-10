@@ -1,7 +1,2 @@
 ﻿  Main.cpp
-C:\Users\569090\Documents\GitHub\Vending-machine\Vending machine code\Vending machine\Vending machine\Main.cpp(28,32): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\569090\Documents\GitHub\Vending-machine\Vending machine code\Vending machine\Vending machine\Main.cpp(29,36): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\569090\Documents\GitHub\Vending-machine\Vending machine code\Vending machine\Vending machine\Main.cpp(30,39): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\569090\Documents\GitHub\Vending-machine\Vending machine code\Vending machine\Vending machine\Main.cpp(31,40): warning C4305: 'argument': truncation from 'double' to 'float'
-C:\Users\569090\Documents\GitHub\Vending-machine\Vending machine code\Vending machine\Vending machine\Main.cpp(32,30): warning C4305: 'argument': truncation from 'double' to 'float'
   Vending machine.vcxproj -> C:\Users\569090\Documents\GitHub\Vending-machine\Vending machine code\Vending machine\x64\Debug\Vending machine.exe
