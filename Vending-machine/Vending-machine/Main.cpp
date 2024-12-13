@@ -25,6 +25,7 @@ int main() {
 	//the lenghth of the array in which the objects are stored
 	const int itemNum = 6;
 	int InputID = 3;
+	string ItemName;
 	//declares the array
 	FoodITM item[itemNum];
 	//declares each individual object in the array
@@ -34,6 +35,7 @@ int main() {
 	item[3] = FoodITM(4, "Monsert Energy", 1.95);
 	item[4] = FoodITM(5, "Spicy Doritos", 1.95);
 	item[5] = FoodITM(6, "Egg", 2.99);
+	int n = sizeof(item);
 
 	//outputs each items ID, name and price
 	for (int i = 0; i < itemNum; i++) {
@@ -48,9 +50,22 @@ int main() {
 	for (int i = 0; i < itemNum; i++) {
 		if (InputID == item[i].ID) {
 			cout << item[i].Name << endl;
+			ItemName = item[i].Name;
+
 			break;
+		}
+		//if the item ID inputted is not the same as any stored the item array will count over, this set of code will
+		//determine if that happens, then it will clear the console and output "Invalid input"
+		if (i >= itemNum - 1) {
+			system("cls");
+			cout << "Invalid input" << endl;
+			main();
 		}
 	}
 
+	//if the ID inputted is valid it will reach this line of code, clear the console and let the user know what the last item vended was.
+	system("cls");
+	cout << "Last item vended: " << ItemName << endl;
+	main();
 	return 0;
 }

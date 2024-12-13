@@ -1,0 +1,3 @@
+﻿  Main.cpp
+C:\Users\569090\Documents\GitHub\Vending-machine\vending-machine\vending-machine\Main.cpp(67,1): warning C4717: 'main': recursive on all control paths, function will cause runtime stack overflow
+  Vending-machine.vcxproj -> C:\Users\569090\Documents\GitHub\Vending-machine\x64\Debug\Vending-machine.exe
