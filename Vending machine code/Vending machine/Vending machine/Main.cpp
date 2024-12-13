@@ -1,3 +1,6 @@
+//getting this to run drom a github clone:
+//go to file - new - project from existing code
+//next - select file location - rename the file the exact same - select dropdown - select console application option - click finish
 #include <iostream>
 #include <string>
 using namespace std;
