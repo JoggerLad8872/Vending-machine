@@ -20,18 +20,45 @@ public:
 		Price = c;
 	}
 };
-float moneyStored;
+float moneyStored = 0;
+bool cancled = false;
 void coinSwitch() {
+	//switch statement that lets the user select the coins they will input they want to input
 	int input;
+
+	cout << "1: 1p \n2: 2p \n3: 5p \n4: 10p \n5: 20p \n6: 50p \n7: P1 \n8: P2 \n9: cancle" << endl;
 	cin >> input;
 	switch (input) {
 	case 1:
-		cout << "test" << endl;
-		moneyStored++;
+		cout << "added 1P" << endl;
+		moneyStored = moneyStored + 0.01;
+		break;
+	case 2:
+		moneyStored = moneyStored + 0.02;
+		break;
+	case 3:
+		moneyStored = moneyStored + 0.05;
+		break;
+	case 4:
+		moneyStored = moneyStored + 0.1;
+		break;
+	case 5:
+		moneyStored = moneyStored + 0.2;
+		break;
+	case 6:
+		moneyStored = moneyStored + 0.5;
+		break;
+	case 7:
+		moneyStored = moneyStored + 1;
+		break;
+	case 8:
+		moneyStored = moneyStored + 2;
 		break;
 	default:
 		cout << "Invalid coin" << endl;
+		cancled = true;
 	}
+	cout << moneyStored;
 }
 
 int main() {
@@ -80,9 +107,9 @@ int main() {
 	system("cls");
 	//outputs the name and price of the item the user wants (I can't do pounds)
 	cout << "You want to buy " << ItemName << "! that will cost: $" << ItemPrice << endl;
-	//switch statement that lets the user select the coins they will input they want to input
-	int egg = 2;
-	while (egg > moneyStored) {
+
+
+	while (ItemPrice > moneyStored && cancled == false) {
 		coinSwitch();
 	}
 
