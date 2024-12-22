@@ -20,12 +20,26 @@ public:
 		Price = c;
 	}
 };
+float moneyStored;
+void coinSwitch() {
+	int input;
+	cin >> input;
+	switch (input) {
+	case 1:
+		cout << "test" << endl;
+		moneyStored++;
+		break;
+	default:
+		cout << "Invalid coin" << endl;
+	}
+}
 
 int main() {
 	//the lenghth of the array in which the objects are stored
 	const int itemNum = 6;
 	int InputID = 3;
 	string ItemName;
+	double ItemPrice;
 	//declares the array
 	FoodITM item[itemNum];
 	//declares each individual object in the array
@@ -51,6 +65,7 @@ int main() {
 		if (InputID == item[i].ID) {
 			cout << item[i].Name << endl;
 			ItemName = item[i].Name;
+			ItemPrice = item[i].Price;
 
 			break;
 		}
@@ -62,9 +77,18 @@ int main() {
 			main();
 		}
 	}
+	system("cls");
+	//outputs the name and price of the item the user wants (I can't do pounds)
+	cout << "You want to buy " << ItemName << "! that will cost: $" << ItemPrice << endl;
+	//switch statement that lets the user select the coins they will input they want to input
+	int egg = 2;
+	while (egg > moneyStored) {
+		coinSwitch();
+	}
+
 
 	//if the ID inputted is valid it will reach this line of code, clear the console and let the user know what the last item vended was.
-	system("cls");
+	//system("cls");
 	cout << "Last item vended: " << ItemName << endl;
 	main();
 	return 0;
