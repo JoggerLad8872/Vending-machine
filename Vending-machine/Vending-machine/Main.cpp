@@ -25,8 +25,8 @@ bool canclled = false;
 void coinSwitch() {
 	//switch statement that lets the user select the coins they will input they want to input
 	int input;
-
-	cout << "1: 1p \n2: 2p \n3: 5p \n4: 10p \n5: 20p \n6: 50p \n7: P1 \n8: P2 \n9: cancle" << endl;
+	//using (char)156 is how to show the £ symbol, for some reason
+	cout << "1: 1p \n2: 2p \n3: 5p \n4: 10p \n5: 20p \n6: 50p \n7: " << (char)156 << "1 \n8: " << (char)156 << "2  \n9: cancle" << endl;
 	cin >> input;
 	switch (input) {
 	case 1:
@@ -54,11 +54,14 @@ void coinSwitch() {
 	case 8:
 		moneyStored = moneyStored + 2;
 		break;
+	case 9:
+		canclled = true;
+		break;
 	default:
 		cout << "Invalid coin" << endl;
-		canclled = true;
+
 	}
-	cout << moneyStored;
+	cout << "Current money inputted: " << (char)156 << moneyStored << endl;
 }
 
 int main() {
@@ -117,13 +120,14 @@ int main() {
 	}
 	//checks if the while loop was broken as a result of the transaction being canclled
 	if (canclled == true) {
-
+		cout << "Money refunded: " << (char)156 << moneyStored << endl;
 	}
-
-
 	//if the ID inputted is valid it will reach this line of code, clear the console and let the user know what the last item vended was.
 	//system("cls");
-	cout << "Last item vended: " << ItemName << endl;
+	else {
+		cout << "Last item vended: " << ItemName << endl;
+	}
+
 	moneyStored = moneyStored * 0;
 	canclled = false;
 	main();
