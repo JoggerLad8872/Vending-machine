@@ -21,7 +21,7 @@ public:
 	}
 };
 float moneyStored = 0;
-bool cancled = false;
+bool canclled = false;
 void coinSwitch() {
 	//switch statement that lets the user select the coins they will input they want to input
 	int input;
@@ -56,7 +56,7 @@ void coinSwitch() {
 		break;
 	default:
 		cout << "Invalid coin" << endl;
-		cancled = true;
+		canclled = true;
 	}
 	cout << moneyStored;
 }
@@ -108,15 +108,24 @@ int main() {
 	//outputs the name and price of the item the user wants (I can't do pounds)
 	cout << "You want to buy " << ItemName << "! that will cost: $" << ItemPrice << endl;
 
+	//while loop that checks if the correct amount of money has been deposited and if the user has cancelled the transaction, if either is true
+	//the loop breaks.
+	while (ItemPrice > moneyStored && canclled == false) {
 
-	while (ItemPrice > moneyStored && cancled == false) {
+		//function that checks what coins the user inputs against the value of the product
 		coinSwitch();
+	}
+	//checks if the while loop was broken as a result of the transaction being canclled
+	if (canclled == true) {
+
 	}
 
 
 	//if the ID inputted is valid it will reach this line of code, clear the console and let the user know what the last item vended was.
 	//system("cls");
 	cout << "Last item vended: " << ItemName << endl;
+	moneyStored = moneyStored * 0;
+	canclled = false;
 	main();
 	return 0;
 }

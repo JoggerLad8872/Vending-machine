@@ -5,5 +5,5 @@ C:\Users\jonny\OneDrive\Documents\GitHub\Vending-machine\vending-machine\vending
 C:\Users\jonny\OneDrive\Documents\GitHub\Vending-machine\vending-machine\vending-machine\Main.cpp(43,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 C:\Users\jonny\OneDrive\Documents\GitHub\Vending-machine\vending-machine\vending-machine\Main.cpp(46,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
 C:\Users\jonny\OneDrive\Documents\GitHub\Vending-machine\vending-machine\vending-machine\Main.cpp(49,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\jonny\OneDrive\Documents\GitHub\Vending-machine\vending-machine\vending-machine\Main.cpp(122,1): warning C4717: 'main': recursive on all control paths, function will cause runtime stack overflow
+C:\Users\jonny\OneDrive\Documents\GitHub\Vending-machine\vending-machine\vending-machine\Main.cpp(131,1): warning C4717: 'main': recursive on all control paths, function will cause runtime stack overflow
   Vending-machine.vcxproj -> C:\Users\jonny\OneDrive\Documents\GitHub\Vending-machine\x64\Debug\Vending-machine.exe
