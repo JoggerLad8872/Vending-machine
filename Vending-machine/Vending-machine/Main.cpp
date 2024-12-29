@@ -3,6 +3,7 @@
 //next - select file location - rename the file the exact same - select dropdown - select console application option - click finish
 #include <iostream>
 #include <string>
+#include <Windows.h>
 using namespace std;
 
 class FoodITM {
@@ -22,7 +23,16 @@ public:
 };
 float moneyStored = 0;
 bool canclled = false;
+int GR = 10;
+int WH = 7;
+
 void coinSwitch() {
+	//allows for lines of code to be a different colour
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+
+	//sets the colour of the outputted text to default (white)
+	SetConsoleTextAttribute(hConsole, WH);
+
 	//switch statement that lets the user select the coins they will input they want to input
 	int input;
 	//using (char)156 is how to show the £ symbol, for some reason
@@ -61,10 +71,17 @@ void coinSwitch() {
 		cout << "Invalid coin" << endl;
 
 	}
+	system("cls");
+	//to add contrast to important outputted values some are highlighted in green or red (this one is green)
+	SetConsoleTextAttribute(hConsole, GR);
 	cout << "Current money inputted: " << (char)156 << moneyStored << endl;
 }
 
 int main() {
+
+
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	SetConsoleTextAttribute(hConsole, WH);
 	//the lenghth of the array in which the objects are stored
 	const int itemNum = 6;
 	int InputID = 3;
