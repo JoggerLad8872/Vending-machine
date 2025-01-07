@@ -143,12 +143,14 @@ int main() {
 
 	//checks if the while loop was broken as a result of the transaction being canclled
 	if (canclled == true) {
+		system("cls");
 		SetConsoleTextAttribute(hConsole, RE);
 		cout << "Money refunded: " << (char)156 << moneyStored << endl;
 	}
 
 	//if the ID inputted is valid it will reach this line of code, clear the console and let the user know what the last item vended was.
 	else {
+		system("cls");
 		cout << "Last item vended: " << ItemName << endl;
 
 		//checks whether or not change will be provided, if there is change it will display the amount of change given
