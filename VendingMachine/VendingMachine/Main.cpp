@@ -23,6 +23,7 @@ public:
 };
 float moneyStored = 0;
 bool canclled = false;
+int RE = 12;
 int GR = 10;
 int WH = 7;
 
@@ -66,6 +67,7 @@ void coinSwitch() {
 		break;
 	case 9:
 		canclled = true;
+
 		break;
 	default:
 		cout << "Invalid coin" << endl;
@@ -120,6 +122,7 @@ int main() {
 		//determine if that happens, then it will clear the console and output "Invalid input"
 		if (i >= itemNum - 1) {
 			system("cls");
+			SetConsoleTextAttribute(hConsole, RE);
 			cout << "Invalid input" << endl;
 			main();
 		}
@@ -135,14 +138,27 @@ int main() {
 		//function that checks what coins the user inputs against the value of the product
 		coinSwitch();
 	}
+
+
+
 	//checks if the while loop was broken as a result of the transaction being canclled
 	if (canclled == true) {
+		SetConsoleTextAttribute(hConsole, RE);
 		cout << "Money refunded: " << (char)156 << moneyStored << endl;
 	}
+
 	//if the ID inputted is valid it will reach this line of code, clear the console and let the user know what the last item vended was.
-	//system("cls");
 	else {
 		cout << "Last item vended: " << ItemName << endl;
+
+		//checks whether or not change will be provided, if there is change it will display the amount of change given
+		if (moneyStored - ItemPrice == 0) {
+			cout << "No change to be given" << endl;
+		}
+		else {
+			cout << "change given: " << (char)156 << moneyStored - ItemPrice << endl;
+		}
+
 	}
 
 	moneyStored = moneyStored * 0;
