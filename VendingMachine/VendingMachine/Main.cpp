@@ -1,4 +1,4 @@
-//getting this to run drom a github clone:
+//getting this to run from a github clone:
 //go to file - new - project from existing code
 //next - select file location - rename the file the exact same - select dropdown - select console application option - click finish
 #include <iostream>
@@ -6,19 +6,22 @@
 #include <Windows.h>
 using namespace std;
 
+//
 class FoodITM {
 public:
 	int ID;
 	string Name;
 	double Price;
+	int Stock;
 	//default constructor: A constructor is needed whenever an object is declared, if no constructor exists the program will not work properly
 	//the default constructor acts as an empty constcructor 
 	FoodITM() {};
 
-	FoodITM(int a, string b, double c) {
+	FoodITM(int a, string b, double c, int d) {
 		ID = a;
 		Name = b;
 		Price = c;
+		Stock = d;
 	}
 };
 float moneyStored = 0;
@@ -79,9 +82,8 @@ void coinSwitch() {
 	cout << "Current money inputted: " << (char)156 << moneyStored << endl;
 }
 
+
 int main() {
-
-
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleTextAttribute(hConsole, WH);
 	//the lenghth of the array in which the objects are stored
@@ -89,20 +91,21 @@ int main() {
 	int InputID = 3;
 	string ItemName;
 	double ItemPrice;
+	int ItemQuant;
 	//declares the array
 	FoodITM item[itemNum];
 	//declares each individual object in the array
-	item[0] = FoodITM(1, "Water", 1.00);
-	item[1] = FoodITM(2, "Pepsi", 1.70);
-	item[2] = FoodITM(3, "Pepsi Max", 1.70);
-	item[3] = FoodITM(4, "Monsert Energy", 1.95);
-	item[4] = FoodITM(5, "Spicy Doritos", 1.95);
-	item[5] = FoodITM(6, "Egg", 2.99);
+	item[0] = FoodITM(1, "Water", 1.00, 10);
+	item[1] = FoodITM(2, "Pepsi", 1.70, 10);
+	item[2] = FoodITM(3, "Pepsi Max", 1.70, 8);
+	item[3] = FoodITM(4, "Monsert Energy", 1.95, 6);
+	item[4] = FoodITM(5, "Spicy Doritos", 1.95, 8);
+	item[5] = FoodITM(6, "Egg", 2.99, 1);
 	int n = sizeof(item);
 
 	//outputs each items ID, name and price
 	for (int i = 0; i < itemNum; i++) {
-		cout << item[i].ID << " " << item[i].Name << " " << item[i].Price << endl;
+		cout << item[i].ID << " " << item[i].Name << " " << item[i].Price << " " << item[i].Stock << endl;
 	}
 
 	//Lets the user input the ID of the item they want to select
@@ -115,6 +118,7 @@ int main() {
 			cout << item[i].Name << endl;
 			ItemName = item[i].Name;
 			ItemPrice = item[i].Price;
+			ItemQuant = item[i].Stock;
 
 			break;
 		}
@@ -128,8 +132,13 @@ int main() {
 		}
 	}
 	system("cls");
+	if (ItemQuant <= 0) {
+		cout << "not enough items left" << endl;
+		system("cls");
+		main();
+	}
 	//outputs the name and price of the item the user wants (I can't do pounds)
-	cout << "You want to buy " << ItemName << "! that will cost: $" << ItemPrice << endl;
+	cout << "You want to buy " << ItemName << "! that will cost: " << (char)156 << ItemPrice << endl;
 
 	//while loop that checks if the correct amount of money has been deposited and if the user has cancelled the transaction, if either is true
 	//the loop breaks.
@@ -152,6 +161,7 @@ int main() {
 	else {
 		system("cls");
 		cout << "Last item vended: " << ItemName << endl;
+		ItemQuant--;
 
 		//checks whether or not change will be provided, if there is change it will display the amount of change given
 		if (moneyStored - ItemPrice == 0) {
@@ -160,6 +170,7 @@ int main() {
 		else {
 			cout << "change given: " << (char)156 << moneyStored - ItemPrice << endl;
 		}
+
 
 	}
 
