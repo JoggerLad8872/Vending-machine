@@ -9,7 +9,7 @@
 #include<limits>
 using namespace std;
 
-//
+///---///---///---///---(FoodITM class)---///---///---///---///
 class FoodITM {
 public:
 	int ID;
@@ -29,10 +29,13 @@ public:
 };
 float moneyStored = 0;
 bool canclled = false;
+
+//colour values for red, green and white
 int RE = 12;
 int GR = 10;
 int WH = 7;
 
+///---///---///---///---(coin switch function)---///---///---///---///
 void coinSwitch() {
 	//allows for lines of code to be a different colour
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
@@ -40,15 +43,18 @@ void coinSwitch() {
 	//sets the colour of the outputted text to default (white)
 	SetConsoleTextAttribute(hConsole, WH);
 
-	//switch statement that lets the user select the coins they will input they want to input
+	//switch statement that lets the user select the coins they want to buy the item with
 	int input;
 	//using (char)156 is how to show the £ symbol, for some reason
 	cout << "1: 1p \n2: 2p \n3: 5p \n4: 10p \n5: 20p \n6: 50p \n7: " << (char)156 << "1 \n8: " << (char)156 << "2  \n9: cancle" << endl;
 	cin >> input;
 	if (isdigit(input) == false) {
+		//clear removes any errors regarding the input
 		cin.clear();
+		//ignore removes input information from the last input
 		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 	}
+	//each switch statement increases float value of "moneyStored" by the value each coin is worth
 	switch (input) {
 	case 1:
 		cout << "added 1P" << endl;
@@ -96,17 +102,20 @@ void coinSwitch() {
 	cout << "Current money inputted: " << (char)156 << moneyStored << endl;
 }
 
-
+///---///---///---///---(Main Function)---///---///---///---///
 int main() {
 	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	SetConsoleTextAttribute(hConsole, WH);
 	//the lenghth of the array in which the objects are stored
-	const int itemNum = 6;
-	int InputID = 3;
+	const int itemNum = 7;
+	//The ID of the item the user wants to buy
+	int InputID;
+	
+	//object components
 	string ItemName;
 	double ItemPrice;
 	int ItemQuant;
-	//declares the array
+	//declares the array which stores the objects
 	FoodITM item[itemNum];
 	//declares each individual object in the array
 	item[0] = FoodITM(1, "Water", 1.00, 10);
@@ -115,6 +124,7 @@ int main() {
 	item[3] = FoodITM(4, "Monsert Energy", 1.95, 6);
 	item[4] = FoodITM(5, "Spicy Doritos", 1.95, 8);
 	item[5] = FoodITM(6, "Egg", 2.99, 1);
+	item[6] = FoodITM(7, "Pretzels", 2.50, 1);
 	int n = sizeof(item);
 
 	//outputs each items ID, name and price
@@ -129,13 +139,13 @@ int main() {
 	//https://www.hackerearth.com/practice/notes/validating-user-input-in-c/
 	//input validation, checks if the input is an intiger, if it is the program continues as normal, if it isn't it clears the input
 	if (isdigit(InputID) == false) {
-		//clear removes any errors regarding the input
+		//clear: removes any errors regarding the last input
 		cin.clear();
-		//ignore makes the previous input ignore any incorrect inputs
+		//ignore: removes input information from the last input
 		cin.ignore(numeric_limits<streamsize>::max(), '\n');
 	}
 
-	//goes through each object and check if the inputted ID matches any of the objects
+	//goes through each object in the array and check if the inputted ID matches any of the objects
 	for (int i = 0; i < itemNum; i++) {
 		if (InputID == item[i].ID) {
 			cout << item[i].Name << endl;
@@ -145,7 +155,7 @@ int main() {
 
 			break;
 		}
-		//if the item ID inputted is not the same as any stored the item array will count over, this set of code will
+		//if the item ID inputted is not the same as any stored, the item array will count over, this set of code will
 		//determine if that happens, then it will clear the console and output "Invalid input"
 		if (i >= itemNum - 1) {
 			system("cls");
@@ -160,7 +170,7 @@ int main() {
 		system("cls");
 		main();
 	}
-	//outputs the name and price of the item the user wants (I can't do pounds)
+	//outputs the name and price of the item the user wants
 	cout << "You want to buy " << ItemName << "! that will cost: " << (char)156 << ItemPrice << endl;
 
 
