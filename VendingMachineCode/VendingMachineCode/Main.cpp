@@ -45,30 +45,41 @@ void coinSwitch() {
 	//using (char)156 is how to show the £ symbol, for some reason
 	cout << "1: 1p \n2: 2p \n3: 5p \n4: 10p \n5: 20p \n6: 50p \n7: " << (char)156 << "1 \n8: " << (char)156 << "2  \n9: cancle" << endl;
 	cin >> input;
+	if (isdigit(input) == false) {
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	}
 	switch (input) {
 	case 1:
 		cout << "added 1P" << endl;
 		moneyStored = moneyStored + 0.01;
 		break;
 	case 2:
+		cout << "added 2P" << endl;
 		moneyStored = moneyStored + 0.02;
 		break;
 	case 3:
+		cout << "added 5P" << endl;
 		moneyStored = moneyStored + 0.05;
 		break;
 	case 4:
+		cout << "added 10P" << endl;
 		moneyStored = moneyStored + 0.1;
 		break;
 	case 5:
+		cout << "added 20P" << endl;
 		moneyStored = moneyStored + 0.2;
 		break;
 	case 6:
+		cout << "added 50P" << endl;
 		moneyStored = moneyStored + 0.5;
 		break;
 	case 7:
+		cout << "added " << (char)156 << "1" << endl;
 		moneyStored = moneyStored + 1;
 		break;
 	case 8:
+		cout << "added " << (char)156 << "2" << endl;
 		moneyStored = moneyStored + 2;
 		break;
 	case 9:
