@@ -1,9 +1,12 @@
 //getting this to run from a github clone:
 //go to file - new - project from existing code
 //next - select file location - rename the file the exact same - select dropdown - select console application option - click finish
+//
+#define NOMINMAX
 #include <iostream>
 #include <string>
 #include <Windows.h>
+#include<limits>
 using namespace std;
 
 //
@@ -112,6 +115,15 @@ int main() {
 	cout << "\nPlease enter an Item ID: " << ends;
 	cin >> InputID;
 
+	//https://www.hackerearth.com/practice/notes/validating-user-input-in-c/
+	//input validation, checks if the input is an intiger, if it is the program continues as normal, if it isn't it clears the input
+	if (isdigit(InputID) == false) {
+		//clear removes any errors regarding the input
+		cin.clear();
+		//ignore makes the previous input ignore any incorrect inputs
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	}
+
 	//goes through each object and check if the inputted ID matches any of the objects
 	for (int i = 0; i < itemNum; i++) {
 		if (InputID == item[i].ID) {
@@ -139,6 +151,7 @@ int main() {
 	}
 	//outputs the name and price of the item the user wants (I can't do pounds)
 	cout << "You want to buy " << ItemName << "! that will cost: " << (char)156 << ItemPrice << endl;
+
 
 	//while loop that checks if the correct amount of money has been deposited and if the user has cancelled the transaction, if either is true
 	//the loop breaks.
