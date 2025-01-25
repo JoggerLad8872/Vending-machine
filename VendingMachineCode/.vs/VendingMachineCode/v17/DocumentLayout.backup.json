@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\569090\\Documents\\GitHub\\Vending-machine\\VendingMachineCode\\",
+  "WorkspaceRootPath": "C:\\Users\\jonny\\OneDrive\\Documents\\GitHub\\Vending-machine\\VendingMachineCode\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{984C8B3A-5567-4C8D-8A8C-9C1C92FAC76E}|VendingMachineCode\\VendingMachineCode.vcxproj|C:\\Users\\569090\\Documents\\GitHub\\Vending-machine\\VendingMachineCode\\VendingMachineCode\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{984C8B3A-5567-4C8D-8A8C-9C1C92FAC76E}|VendingMachineCode\\VendingMachineCode.vcxproj|C:\\Users\\jonny\\OneDrive\\Documents\\GitHub\\Vending-machine\\VendingMachineCode\\VendingMachineCode\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{984C8B3A-5567-4C8D-8A8C-9C1C92FAC76E}|VendingMachineCode\\VendingMachineCode.vcxproj|solutionrelative:VendingMachineCode\\Main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -20,10 +20,10 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Main.cpp",
-              "DocumentMoniker": "C:\\Users\\569090\\Documents\\GitHub\\Vending-machine\\VendingMachineCode\\VendingMachineCode\\Main.cpp",
+              "DocumentMoniker": "C:\\Users\\jonny\\OneDrive\\Documents\\GitHub\\Vending-machine\\VendingMachineCode\\VendingMachineCode\\Main.cpp",
               "RelativeDocumentMoniker": "VendingMachineCode\\Main.cpp",
-              "ToolTip": "C:\\Users\\569090\\Documents\\GitHub\\Vending-machine\\VendingMachineCode\\VendingMachineCode\\Main.cpp*",
-              "RelativeToolTip": "VendingMachineCode\\Main.cpp*",
+              "ToolTip": "C:\\Users\\jonny\\OneDrive\\Documents\\GitHub\\Vending-machine\\VendingMachineCode\\VendingMachineCode\\Main.cpp",
+              "RelativeToolTip": "VendingMachineCode\\Main.cpp",
               "ViewState": "AgIAAJAAAAAAAAAAAAAAAJ0AAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-01-21T12:14:07.326Z",
