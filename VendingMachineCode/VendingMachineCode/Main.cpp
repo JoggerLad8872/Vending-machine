@@ -15,16 +15,14 @@ public:
 	int ID;
 	string Name;
 	double Price;
-	int Stock;
 	//default constructor: A constructor is needed whenever an object is declared, if no constructor exists the program will not work properly
 	//the default constructor acts as an empty constcructor 
 	FoodITM() {};
 
-	FoodITM(int a, string b, double c, int d) {
+	FoodITM(int a, string b, double c) {
 		ID = a;
 		Name = b;
 		Price = c;
-		Stock = d;
 	}
 };
 float moneyStored = 0;
@@ -114,22 +112,21 @@ int main() {
 	//object components
 	string ItemName;
 	double ItemPrice;
-	int ItemQuant;
 	//declares the array which stores the objects
 	FoodITM item[itemNum];
 	//declares each individual object in the array
-	item[0] = FoodITM(1, "Water", 1.00, 10);
-	item[1] = FoodITM(2, "Pepsi", 1.70, 10);
-	item[2] = FoodITM(3, "Pepsi Max", 1.70, 8);
-	item[3] = FoodITM(4, "Monsert Energy", 1.95, 6);
-	item[4] = FoodITM(5, "Spicy Doritos", 1.95, 8);
-	item[5] = FoodITM(6, "Egg", 2.99, 1);
-	item[6] = FoodITM(7, "Pretzels", 2.50, 1);
+	item[0] = FoodITM(1, "Water", 1.00);
+	item[1] = FoodITM(2, "Pepsi", 1.70);
+	item[2] = FoodITM(3, "Pepsi Max", 1.70);
+	item[3] = FoodITM(4, "Monsert Energy", 1.95);
+	item[4] = FoodITM(5, "Spicy Doritos", 1.95);
+	item[5] = FoodITM(6, "Egg", 2.99);
+	item[6] = FoodITM(7, "Pretzels", 2.50);
 	int n = sizeof(item);
 
 	//outputs each items ID, name and price
 	for (int i = 0; i < itemNum; i++) {
-		cout << item[i].ID << " " << item[i].Name << " " << item[i].Price << " " << item[i].Stock << endl;
+		cout << item[i].ID << " " << item[i].Name << " " << item[i].Price << endl;
 	}
 
 	//Lets the user input the ID of the item they want to select
@@ -151,11 +148,11 @@ int main() {
 			cout << item[i].Name << endl;
 			ItemName = item[i].Name;
 			ItemPrice = item[i].Price;
-			ItemQuant = item[i].Stock;
 
 			break;
 		}
-		//if the item ID inputted is not the same as any stored, the item array will count over, this set of code will
+		//if the item ID inputted is not the same as any stored,
+		// the item array will count over, this set of code will
 		//determine if that happens, then it will clear the console and output "Invalid input"
 		if (i >= itemNum - 1) {
 			system("cls");
@@ -165,11 +162,7 @@ int main() {
 		}
 	}
 	system("cls");
-	if (ItemQuant <= 0) {
-		cout << "not enough items left" << endl;
-		system("cls");
-		main();
-	}
+
 	//outputs the name and price of the item the user wants
 	cout << "You want to buy " << ItemName << "! that will cost: " << (char)156 << ItemPrice << endl;
 
@@ -188,6 +181,7 @@ int main() {
 	if (canclled == true) {
 		system("cls");
 		SetConsoleTextAttribute(hConsole, RE);
+
 		cout << "Money refunded: " << (char)156 << moneyStored << endl;
 	}
 
@@ -195,7 +189,6 @@ int main() {
 	else {
 		system("cls");
 		cout << "Last item vended: " << ItemName << endl;
-		ItemQuant--;
 
 		//checks whether or not change will be provided, if there is change it will display the amount of change given
 		if (moneyStored - ItemPrice == 0) {

@@ -1,9 +1,9 @@
 ﻿  Main.cpp
-C:\Users\jonny\OneDrive\Documents\GitHub\Vending-machine\VendingMachineCode\VendingMachineCode\Main.cpp(61,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\jonny\OneDrive\Documents\GitHub\Vending-machine\VendingMachineCode\VendingMachineCode\Main.cpp(65,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\jonny\OneDrive\Documents\GitHub\Vending-machine\VendingMachineCode\VendingMachineCode\Main.cpp(69,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\jonny\OneDrive\Documents\GitHub\Vending-machine\VendingMachineCode\VendingMachineCode\Main.cpp(73,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\jonny\OneDrive\Documents\GitHub\Vending-machine\VendingMachineCode\VendingMachineCode\Main.cpp(77,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\jonny\OneDrive\Documents\GitHub\Vending-machine\VendingMachineCode\VendingMachineCode\Main.cpp(81,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
-C:\Users\jonny\OneDrive\Documents\GitHub\Vending-machine\VendingMachineCode\VendingMachineCode\Main.cpp(215,1): warning C4717: 'main': recursive on all control paths, function will cause runtime stack overflow
+C:\Users\jonny\OneDrive\Documents\GitHub\Vending-machine\VendingMachineCode\VendingMachineCode\Main.cpp(59,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\jonny\OneDrive\Documents\GitHub\Vending-machine\VendingMachineCode\VendingMachineCode\Main.cpp(63,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\jonny\OneDrive\Documents\GitHub\Vending-machine\VendingMachineCode\VendingMachineCode\Main.cpp(67,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\jonny\OneDrive\Documents\GitHub\Vending-machine\VendingMachineCode\VendingMachineCode\Main.cpp(71,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\jonny\OneDrive\Documents\GitHub\Vending-machine\VendingMachineCode\VendingMachineCode\Main.cpp(75,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\jonny\OneDrive\Documents\GitHub\Vending-machine\VendingMachineCode\VendingMachineCode\Main.cpp(79,29): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+C:\Users\jonny\OneDrive\Documents\GitHub\Vending-machine\VendingMachineCode\VendingMachineCode\Main.cpp(208,1): warning C4717: 'main': recursive on all control paths, function will cause runtime stack overflow
   VendingMachineCode.vcxproj -> C:\Users\jonny\OneDrive\Documents\GitHub\Vending-machine\VendingMachineCode\x64\Debug\VendingMachineCode.exe
