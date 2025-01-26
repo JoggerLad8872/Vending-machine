@@ -1,7 +1,3 @@
-//getting this to run from a github clone:
-//go to file - new - project from existing code
-//next - select file location - rename the file the exact same - select dropdown - select console application option - click finish
-//
 #define NOMINMAX
 #include <iostream>
 #include <string>
@@ -133,7 +129,6 @@ int main() {
 	cout << "\nPlease enter an Item ID: " << ends;
 	cin >> InputID;
 
-	//https://www.hackerearth.com/practice/notes/validating-user-input-in-c/
 	//input validation, checks if the input is an intiger, if it is the program continues as normal, if it isn't it clears the input
 	if (isdigit(InputID) == false) {
 		//clear: removes any errors regarding the last input
